@@ -51,7 +51,7 @@ export default function App() {
   const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
   // Toggle this to false when you want to re-enable JSONbin API requests
-  const DISABLE_API = false;
+  const DISABLE_API = true;
 
   // Generate random particles once on load
   const particles = useMemo(() => {
