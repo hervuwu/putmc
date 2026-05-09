@@ -32,7 +32,7 @@ export default function App() {
   const API_KEY = import.meta.env.VITE_JSONBIN_API_KEY;
   const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
-  const DISABLE_API = true;
+  const DISABLE_API = false;
 
   useEffect(() => {
     const fetchComments = async () => {
