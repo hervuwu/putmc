@@ -10,6 +10,7 @@ import AdminModal from "./AdminModal";
 import HomeView from "./HomeView";
 import CommentsView from "./CommentsView";
 import AdminView from "./AdminView";
+import LoadingScreen from "./LoadingScreen";
 import "./App.css";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
   const [adminPasswordInput, setAdminPasswordInput] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [appReady, setAppReady] = useState(false);
   const [modelScale, setModelScale] = useState(
     window.innerWidth <= 768 ? 1.5 : window.innerWidth <= 1024 ? 0.8 : 1.2
   );
@@ -164,7 +166,7 @@ export default function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setModelScale(window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 80 : 1.2 );
+      setModelScale(window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 0.8 : 1.2 );
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -199,6 +201,7 @@ export default function App() {
 
   return (
     <>
+      <LoadingScreen isApiLoading={isLoading} onComplete={() => setAppReady(true)} />
       <Background />
 
       <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
@@ -216,6 +219,7 @@ export default function App() {
           <motion.div key="home" variants={pageVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.4, ease: "easeOut" }}>
             <Header view="home" onBack={() => {}} />
             <HomeView 
+              appReady={appReady}
               comments={comments}
               isLoading={isLoading}
               modelScale={modelScale}
