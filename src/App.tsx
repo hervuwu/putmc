@@ -626,37 +626,37 @@ export default function App() {
           variants={staggerContainer}
         >
           <motion.div className="team-card glass-panel" variants={cardVariants} whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}>
-            <div className="team-photo"></div>
+            <motion.div className="team-photo" animate={{ y: [-5, 5, -5], boxShadow: ["0px 0px 10px rgba(196, 94, 62, 0.2)", "0px 10px 25px rgba(196, 94, 62, 0.7)", "0px 0px 10px rgba(196, 94, 62, 0.2)"] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} whileHover={{ rotate: 10, scale: 1.05 }}></motion.div>
             <h3>Jose Marie L. Bacalso</h3>
             <p>Phone: 09462382092</p>
             <p>Email: bacalsojose821@gmail.com</p>
           </motion.div>
           <motion.div className="team-card glass-panel" variants={cardVariants} whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}>
-            <div className="team-photo"></div>
+            <motion.div className="team-photo" animate={{ y: [-5, 5, -5], boxShadow: ["0px 0px 10px rgba(196, 94, 62, 0.2)", "0px 10px 25px rgba(196, 94, 62, 0.7)", "0px 0px 10px rgba(196, 94, 62, 0.2)"] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} whileHover={{ rotate: -10, scale: 1.05 }}></motion.div>
             <h3>Trese Ray Bustamante</h3>
             <p>Phone: 09455835666</p>
             <p>Email: treseraybb@gmail.com</p>
           </motion.div>
           <motion.div className="team-card glass-panel" variants={cardVariants} whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}>
-            <div className="team-photo"></div>
+            <motion.div className="team-photo" animate={{ y: [-5, 5, -5], boxShadow: ["0px 0px 10px rgba(196, 94, 62, 0.2)", "0px 10px 25px rgba(196, 94, 62, 0.7)", "0px 0px 10px rgba(196, 94, 62, 0.2)"] }} transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }} whileHover={{ rotate: 10, scale: 1.05 }}></motion.div>
             <h3>Faith Andrea Egas</h3>
             <p>Phone: 09537799212</p>
             <p>Email: faithandreaegas24@gmail.com</p>
           </motion.div>
           <motion.div className="team-card glass-panel" variants={cardVariants} whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}>
-            <div className="team-photo"></div>
+            <motion.div className="team-photo" animate={{ y: [-5, 5, -5], boxShadow: ["0px 0px 10px rgba(196, 94, 62, 0.2)", "0px 10px 25px rgba(196, 94, 62, 0.7)", "0px 0px 10px rgba(196, 94, 62, 0.2)"] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }} whileHover={{ rotate: -10, scale: 1.05 }}></motion.div>
             <h3>Marx Carl Hife</h3>
             <p>Phone: 09478543822</p>
             <p>Email: marxcarla5@gmail.com</p>
           </motion.div>
           <motion.div className="team-card glass-panel" variants={cardVariants} whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}>
-            <div className="team-photo"></div>
+            <motion.div className="team-photo" animate={{ y: [-5, 5, -5], boxShadow: ["0px 0px 10px rgba(196, 94, 62, 0.2)", "0px 10px 25px rgba(196, 94, 62, 0.7)", "0px 0px 10px rgba(196, 94, 62, 0.2)"] }} transition={{ duration: 3.1, repeat: Infinity, ease: "easeInOut" }} whileHover={{ rotate: 10, scale: 1.05 }}></motion.div>
             <h3>Dave Lawas</h3>
             <p>Phone: 09702231654</p>
             <p>Email: dave.lawas1234@gmail.com</p>
           </motion.div>
           <motion.div className="team-card glass-panel" variants={cardVariants} whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}>
-            <div className="team-photo"></div>
+            <motion.div className="team-photo" animate={{ y: [-5, 5, -5], boxShadow: ["0px 0px 10px rgba(196, 94, 62, 0.2)", "0px 10px 25px rgba(196, 94, 62, 0.7)", "0px 0px 10px rgba(196, 94, 62, 0.2)"] }} transition={{ duration: 2.9, repeat: Infinity, ease: "easeInOut" }} whileHover={{ rotate: -10, scale: 1.05 }}></motion.div>
             <h3>Jhon Hervy Yu</h3>
             <p>Phone: 09924744150</p>
             <p>Email: yujhervy@gmail.com</p>
@@ -757,7 +757,18 @@ export default function App() {
         <p>
           © {new Date().getFullYear()} PUTMC Research Team. All rights reserved.
         </p>
-        <div style={{ marginTop: "1rem" }}>
+        <div style={{ marginTop: "1rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "1.5rem" }}>
+          <a 
+            href="https://github.com/hervuwu/putmc" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="GitHub Repository"
+            style={{ color: "#888", display: "flex", alignItems: "center" }}
+          >
+            <svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+          </a>
           <button 
             onClick={handleAdminAccess} 
             style={{ background: "transparent", border: "none", color: "#666", cursor: "pointer", fontSize: "0.85rem", textDecoration: "underline" }}
