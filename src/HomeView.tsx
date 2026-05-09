@@ -204,7 +204,7 @@ export default function HomeView({
                 <PutmcTrap scale={10 * modelScale} position={[0, -1.5, 0]} />
               </Suspense>
             </PresentationControls>
-            <EffectComposer disableNormalPass multisampling={0}><Bloom luminanceThreshold={0.5} luminanceSmoothing={0.9} intensity={2} mipmapBlur={false} /></EffectComposer>
+            <EffectComposer multisampling={0}><Bloom luminanceThreshold={0.5} luminanceSmoothing={0.9} intensity={2} mipmapBlur={false} /></EffectComposer>
           </Canvas>
         </motion.div>
       </section>
@@ -319,7 +319,7 @@ export default function HomeView({
                 <Suspense fallback={null}>
                   <PutmcTrap scale={7.5 * modelScale} position={[0, -2.5, 0]} rotation={[0, 0, 0]} fanSpeed={demoFanSpeed} />
                 </Suspense>
-                <EffectComposer disableNormalPass multisampling={0}><Bloom luminanceThreshold={0.5} luminanceSmoothing={0.9} intensity={2} mipmapBlur={false} /></EffectComposer>
+                <EffectComposer multisampling={0}><Bloom luminanceThreshold={0.5} luminanceSmoothing={0.9} intensity={2} mipmapBlur={false} /></EffectComposer>
              </Canvas>
           </div>
 

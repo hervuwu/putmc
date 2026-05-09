@@ -40,12 +40,6 @@ export function Model(props: any) {
   // Create reference for the ID19 Fan
   const fanRef = useRef<THREE.Mesh>(null)
 
-  // --- NEW: Subtle Glowing Material for the UV Light ---
-  const uvGlowMaterial = React.useMemo(() => new THREE.MeshBasicMaterial({
-    color: new THREE.Color('#7f54f8').multiplyScalar(20), // Aggressive multiplier to guarantee visibility
-    toneMapped: false
-  }), []);
-
   // Spin the fan
   useFrame((_, delta) => {
     if (fanRef.current) {
