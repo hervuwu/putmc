@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
@@ -28,11 +29,11 @@ export default function App() {
     window.innerWidth <= 768 ? 1.5 : window.innerWidth <= 1024 ? 0.8 : 1.2
   );
 
-  const BIN_ID = import.meta.env.VITE_JSONBIN_BIN_ID;
-  const API_KEY = import.meta.env.VITE_JSONBIN_API_KEY;
-  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
+  const BIN_ID = (import.meta.env.VITE_JSONBIN_BIN_ID as string) || '';
+  const API_KEY = (import.meta.env.VITE_JSONBIN_API_KEY as string) || '';
+  const ADMIN_PASSWORD = (import.meta.env.VITE_ADMIN_PASSWORD as string) || '';
 
-  const DISABLE_API = false;
+  const DISABLE_API = false; // Set to true to disable API calls and use only localStorage (for testing or if API limits are a concern)
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -179,7 +180,7 @@ export default function App() {
     setPasswordError("");
   };
 
-  const handlePasswordSubmit = (e?: FormEvent) => {
+  const handlePasswordSubmit = (e?: FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault();
     if (adminPasswordInput === ADMIN_PASSWORD) { 
       setShowAdminPage(true);

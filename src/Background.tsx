@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Background() {
   const { scrollY } = useScroll();
-  const parallaxY = useTransform(scrollY, y => y * -0.2);
+  const parallaxY = useTransform(scrollY, (y: number) => y * -0.2);
 
   const particles = useMemo(() => {
     return Array.from({ length: 30 }).map((_, i) => {

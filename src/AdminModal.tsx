@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 interface AdminModalProps {
   show: boolean;
   onClose: () => void;
-  onSubmit: (e: FormEvent) => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   passwordInput: string;
   setPasswordInput: (v: string) => void;
   error: string;
