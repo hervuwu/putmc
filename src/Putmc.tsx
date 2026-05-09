@@ -33,8 +33,8 @@ type GLTFResult = GLTF & {
   animations: THREE.AnimationClip[]
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/putmc.glb') as GLTFResult
+export function Model(props: any) {
+  const { nodes, materials } = useGLTF('/putmc.glb') as unknown as GLTFResult
   
   // Create reference for the ID19 Fan
   const fanRef = useRef<THREE.Mesh>(null)
